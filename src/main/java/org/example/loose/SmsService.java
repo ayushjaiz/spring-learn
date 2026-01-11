@@ -1,4 +1,4 @@
-package org.example.src;
+package org.example.loose;
 
 public class SmsService implements NotificationService{
     @Override

@@ -6,5 +6,9 @@
 
     <!-- bean definitions here -->
     <bean id="myBean" class="org.example.GreetingService"></bean>
+    <bean id="EmailService" class="org.example.loose.EmailService"></bean>
+    <bean id="User" class="org.example.loose.User">
+        <constructor-arg ref="EmailService"/>
+    </bean>
 
 </beans>
