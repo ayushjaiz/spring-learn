@@ -1,17 +1,17 @@
 package org.example;
 
 import org.example.loose.User;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.ApplicationContext;
 
 public class Main {
-    public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("applicationBeanContext.xml");
+    static void main() {
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
-        GreetingService greetingService = (GreetingService) context.getBean("myBean");
+        GreetingService greetingService = context.getBean(GreetingService.class);
         greetingService.sayHello();
 
-        User user = (User) context.getBean("User");
+        User user = context.getBean(User.class);
         user.notifyUser();
     }
-}
+} 
